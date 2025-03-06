@@ -112,7 +112,7 @@
 #' # Polytomous outcomes (multinomial logistic regression)
 #'
 #' pmsampsize_mult_general(type = "m",
-#' rsquared = c(0.15,0.15,0.15),
+#' crsquared = c(0.15,0.15,0.15),
 #' parameters = 17,
 #' shrinkage = 0.9,
 #' K = 3,
@@ -167,7 +167,7 @@ pmsampsize_mult_general <- function(type,
   if (type == "m"){
 
     ### Define number of pairs
-    n_pairs <- as.numeric(ncol(combn(K,2)))
+    n_pairs <- as.numeric(ncol(utils::combn(K,2)))
 
     ### Calculate p_k (proportion of individuals in outcome category k)
     p_k <- mult_n_events/sum(mult_n_events)
@@ -175,8 +175,8 @@ pmsampsize_mult_general <- function(type,
     ### Calculate p_k_r, proportion of individuals in outcome category k and r combined
     p_k_r <- lapply(1:n_pairs, function(x){
       ### Get locations
-      k <- combn(K,2)[1,x]
-      j <- combn(K,2)[2,x]
+      k <- utils::combn(K,2)[1,x]
+      j <- utils::combn(K,2)[2,x]
 
       ### Assign p_k_r
       return((mult_n_events[j] + mult_n_events[k])/sum(mult_n_events))
@@ -187,8 +187,8 @@ pmsampsize_mult_general <- function(type,
     ### Calculate pairwise outcome proportions (phi), of category k relative to category r
     phi <- lapply(1:n_pairs, function(x){
       ### Get locations
-      k <- combn(K,2)[1,x]
-      j <- combn(K,2)[2,x]
+      k <- utils::combn(K,2)[1,x]
+      j <- utils::combn(K,2)[2,x]
 
       ### Assign p_k_r
       return((mult_n_events[j])/(mult_n_events[j] + mult_n_events[k]))
@@ -345,7 +345,7 @@ pmsampsize_mult <- function(csrsquared,parameters,shrinkage,cstatistic,nagrsquar
   # create output table
   res_criteria1 <- matrix(NA,n_pairs, 4)
   colnames(res_criteria1) <- c("CS_Rsq", "Max_Rsq","Nag_Rsq", "targ_shrinkage")
-  rownames(res_criteria1) <- paste("Pair", unlist(lapply(1:n_pairs, function(x){paste(combn(K,2)[,x], collapse = ",")})), sep = " ")
+  rownames(res_criteria1) <- paste("Pair", unlist(lapply(1:n_pairs, function(x){paste(utils::combn(K,2)[,x], collapse = ",")})), sep = " ")
   res_criteria1[,1] <- round(csrsquared, 3)
   res_criteria1[,2] <- round(max_rsquared, 3)
   res_criteria1[,3] <- round(nagrsquared, 3)
@@ -436,14 +436,14 @@ pmsampsize_errorcheck_mult <- function(type,
         if (any(is.na(nagrsquared))){
           stop("Specify one of csrsquared, nagrsquared, or C-statistic as a numeric vector with no NA values")
         } else {
-          if (length(nagrsquared) != ncol(combn(K,2))){
+          if (length(nagrsquared) != ncol(utils::combn(K,2))){
             stop("The length of nagrsquared should be equal to the number of pairs of outcome categories. This is equal to K choose 2")
           }
 
         }
       } else {
 
-        if (length(cstatistic) != ncol(combn(K,2))){
+        if (length(cstatistic) != ncol(utils::combn(K,2))){
           stop("The length of cstatistic should be equal to the number of pairs of outcome categories. This is equal to K choose 2")
         }
 
@@ -459,7 +459,7 @@ pmsampsize_errorcheck_mult <- function(type,
       if (!any(is.na(cstatistic))){
         stop("Specify only one of csrsquared, nagrsquared, or C-statistic")
       }
-      if (length(csrsquared) != ncol(combn(K,2))){
+      if (length(csrsquared) != ncol(utils::combn(K,2))){
         stop("The length of csrsquared should be equal to the number of pairs of outcome categories. This is equal to K choose 2")
       }
     }

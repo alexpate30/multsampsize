@@ -138,7 +138,7 @@ multivariable prediction model using the criteria proposed by Riley \emph{et al}
 
 # Polytomous outcomes (multinomial logistic regression)
 
-pmsampsize(type = "m",
+pmsampsize_mult_general(type = "m",
 rsquared = c(0.15,0.15,0.15),
 parameters = 17,
 shrinkage = 0.9,

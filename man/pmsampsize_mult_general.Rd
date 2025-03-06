@@ -42,6 +42,8 @@ pmsampsize_mult_general(
 the Nagelkerke's R-squared of the new model, which is the Cox-Snell R-squared scaled to
 lie in the 0,1 range. It is interpretable in the same way as the standard R-squared, i.e.
 the percentage of variation in outcome values explained by the model.
+For \code{type="m"} this specifies the expected value of
+the Nagelkerke's R-squared of the pairwise distinct logistic regression models, and should be a vector.
 Please read the description of \code{rsquared} for additional details about specifying the
 expected R-squared performance}
 
@@ -50,6 +52,8 @@ the Cox-Snell R-squared of the new model. The Cox-Snell R-squared is the general
 version of the well-known R-squared for continuous outcomes, based on the likelihood.
 Please read the description of \code{rsquared} for additional details about specifying the
 expected R-squared performance.
+For \code{type="m"} this specifies the expected value of
+the Cox-Snell R-squared of the pairwise distinct logistic regression models, and should be a vector.
 The papers by Riley et al. (see references) outline how to obtain the Cox-Snell R-squared value
 from published studies if they are not reported, using other information (such as the
 C-statistic, see \code{cstatistic()} option below).}
@@ -88,7 +92,9 @@ existing prediction model study to be used in conjunction with the expected
 prevalence to approximate the Cox-Snell R-squared using the approach of Riley et al. 2020.
 Ideally, this should be an optimism-adjusted C-statistic. The approximate Cox-Snell R-squared
 value is used as described above for the \code{csrsquared()} option, and so is treated as a baseline
-for the expected performance of the new model.}
+for the expected performance of the new model.
+For \code{type="m"} this specifies the pairwise C-statistics reported in an
+existing prediction model, and should be a vector.}
 
 \item{seed}{(\code{type="b"} option) specifies the initial value of the random-number
 seed used by the random-number functions when simulating data to approximate the

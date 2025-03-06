@@ -1,9 +1,9 @@
 Package: multsampsize
-Title: What the Package Does (One Line, Title Case)
+Title: Sample size calculations for clinical prediction models developing using multinomial logistic regression
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Alexander", "Pate", , "alexander.pate@manchester.ac.uk", role = c("aut", "cre"))
+Description: Sample size calculations for clinical prediction models developing using multinomial logistic regression.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

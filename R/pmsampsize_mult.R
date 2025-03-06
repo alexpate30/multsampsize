@@ -112,7 +112,7 @@
 #' # Polytomous outcomes (multinomial logistic regression)
 #'
 #' pmsampsize_mult_general(type = "m",
-#' crsquared = c(0.15,0.15,0.15),
+#' csrsquared = c(0.15,0.15,0.15),
 #' parameters = 17,
 #' shrinkage = 0.9,
 #' K = 3,
@@ -143,28 +143,28 @@ pmsampsize_mult_general <- function(type,
 
   ### NB: Unless specified as "_overall", metrics (nagrsquared, csrsquared, cstatistic) are referring to pairwise
 
-  ### Run error check
-  pmsampsize_errorcheck_mult(type = type,
-                             nagrsquared = nagrsquared,
-                             csrsquared = csrsquared,
-                             rsquared = rsquared,
-                             parameters = parameters,
-                             shrinkage = shrinkage,
-                             cstatistic = cstatistic,
-                             prevalence = prevalence,
-                             rate = rate,
-                             timepoint = timepoint,
-                             meanfup = meanfup,
-                             intercept = intercept,
-                             sd = sd,
-                             mmoe=1.1,
-                             ### New parameters
-                             K = K,
-                             mult_n_events = mult_n_events,
-                             mult_rsquared_overall = mult_rsquared_overall,
-                             mult_nagrsquared_overall = mult_nagrsquared_overall)
-
   if (type == "m"){
+
+    ### Run error check
+    pmsampsize_errorcheck_mult(type = type,
+                               nagrsquared = nagrsquared,
+                               csrsquared = csrsquared,
+                               rsquared = rsquared,
+                               parameters = parameters,
+                               shrinkage = shrinkage,
+                               cstatistic = cstatistic,
+                               prevalence = prevalence,
+                               rate = rate,
+                               timepoint = timepoint,
+                               meanfup = meanfup,
+                               intercept = intercept,
+                               sd = sd,
+                               mmoe=1.1,
+                               ### New parameters
+                               K = K,
+                               mult_n_events = mult_n_events,
+                               mult_rsquared_overall = mult_rsquared_overall,
+                               mult_nagrsquared_overall = mult_nagrsquared_overall)
 
     ### Define number of pairs
     n_pairs <- as.numeric(ncol(utils::combn(K,2)))

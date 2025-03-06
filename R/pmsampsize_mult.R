@@ -32,11 +32,11 @@
 #' expected R-squared performance.
 #' The papers by Riley et al. (see references) outline how to obtain the Cox-Snell R-squared value
 #' from published studies if they are not reported, using other information (such as the
-#' C-statistic [see \code{cstatistic()} option below]).
+#' C-statistic, see \code{cstatistic()} option below).
 #'
 #' @param nagrsquared for \code{type="b" or type="s"} this specifies the expected value of
 #' the Nagelkerke's R-squared of the new model, which is the Cox-Snell R-squared scaled to
-#' lie in the [0,1] range. It is interpretable in the same way as the standard R-squared, i.e.
+#' lie in the 0,1 range. It is interpretable in the same way as the standard R-squared, i.e.
 #' the percentage of variation in outcome values explained by the model.
 #' Please read the description of \code{rsquared} for additional details about specifying the
 #' expected R-squared performance

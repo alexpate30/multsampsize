@@ -4,12 +4,12 @@
 \name{multsampsize-package}
 \alias{multsampsize}
 \alias{multsampsize-package}
-\title{multsampsize: What the Package Does (One Line, Title Case)}
+\title{multsampsize: Sample size calculations for clinical prediction models developing using multinomial logistic regression}
 \description{
-What the package does (one paragraph).
+Sample size calculations for clinical prediction models developing using multinomial logistic regression.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com}
+\strong{Maintainer}: Alexander Pate \email{alexander.pate@manchester.ac.uk}
 
 }
 \keyword{internal}

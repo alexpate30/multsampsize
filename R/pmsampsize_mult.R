@@ -242,7 +242,6 @@ pmsampsize_mult_general <- function(type,
 
       ### Get max_rsquared
       max_rsquared <- unlist(max_rsquared)
-      print(max_rsquared)
 
       ### Get nagelkerke rsquared
       nagrsquared <- csrsquared/max_rsquared

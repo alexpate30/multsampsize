@@ -3,3 +3,5 @@
 ^LICENSE\.md$
 ^gitignore$
 ^README\.Rmd$
+^\.github$
+^codecov\.yml$

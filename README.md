@@ -11,8 +11,9 @@ coverage](https://codecov.io/gh/alexpate30/multsampsize/graph/badge.svg)](https:
 <!-- badges: end -->
 
 The goal of multsampsize is to estimate sample sizes for multinomial
-logistic regression models \[@10.1177/09622802231151220\]. \##
-Installation
+logistic regression models \[@10.1177/09622802231151220\].
+
+## Installation
 
 You can install the development version of multsampsize from
 [GitHub](https://github.com/) with:

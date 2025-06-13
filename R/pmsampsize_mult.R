@@ -1,9 +1,10 @@
-#' pmsampsize
-#' - Sample Size for Development of a Prediction Model
+#' pmsampsize_mult_general
 #'
-#' @description \code{pmsampsize} computes the minimum sample size required for the development of a new
-#' multivariable prediction model using the criteria proposed by Riley \emph{et al}. 2018.
-#'
+#' @description \code{pmsampsize_mult_general} computes the minimum sample size required for the development of a new
+#' prediction model using multinomial logistic regression using the criteria proposed by Pate et \emph{et al}. 2018.
+#' Please note, this function has been written to be integrated with the pmsampsize function from the pmsampsizepackage, however
+#' does not have all the functionality available within pmsampsize. Specifically, the inputs for the parameter type "c", "b" and "s"
+#' will not work here. You can only specify type = "m".
 #'
 #' @param type specifies the type of analysis for which sample size is being calculated
 #'      \itemize{
@@ -286,7 +287,7 @@ pmsampsize_mult_general <- function(type,
 
 }
 
-
+### This is an internal function that will not be exported.
 pmsampsize_mult <- function(csrsquared,parameters,shrinkage,cstatistic,nagrsquared, max_rsquared,
                             K, n_pairs, p_k, p_k_r, phi, mult_rsquared_overall, max_mult_rsquared_overall) {
 

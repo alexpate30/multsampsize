@@ -287,7 +287,7 @@ pmsampsize_mult_general <- function(type,
 
 }
 
-### This is an internal function that will not be exported.
+### This is an internal function that will not be exported. This will be plugged into pmsampsize.
 pmsampsize_mult <- function(csrsquared,parameters,shrinkage,cstatistic,nagrsquared, max_rsquared,
                             K, n_pairs, p_k, p_k_r, phi, mult_rsquared_overall, max_mult_rsquared_overall) {
 
@@ -383,6 +383,7 @@ pmsampsize_mult <- function(csrsquared,parameters,shrinkage,cstatistic,nagrsquar
 
 }
 
+### This is an internal function that will not be exported. This will be plugged into pmsampsize.
 pmsampsize_errorcheck_mult <- function(type,
                                        csrsquared,
                                        nagrsquared,
